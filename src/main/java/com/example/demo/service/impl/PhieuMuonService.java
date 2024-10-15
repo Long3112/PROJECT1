@@ -10,8 +10,10 @@ import java.util.List;
 
 @Service
 public class PhieuMuonService implements IPhieuMuonService {
-@Autowired
-private PhieuMuonRepository phieuMuonRepository;
+
+    @Autowired
+    private PhieuMuonRepository phieuMuonRepository;
+
     @Override
     public List<PhieuMuon> findAll() {
         return phieuMuonRepository.findAll();
@@ -19,16 +21,17 @@ private PhieuMuonRepository phieuMuonRepository;
 
     @Override
     public PhieuMuon findById(Long id) {
-        return null;
+        return phieuMuonRepository.findById(id).get(); // Using get() directly
     }
 
     @Override
     public void save(PhieuMuon phieuMuon) {
-
+        phieuMuonRepository.save(phieuMuon); // Save the PhieuMuon object
     }
 
     @Override
     public void remove(Long id) {
-
+        phieuMuonRepository.deleteById(id); // Delete by ID
     }
 }
+

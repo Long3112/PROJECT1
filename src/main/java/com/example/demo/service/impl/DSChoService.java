@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-    @Service
+@Service
 public class DSChoService implements IDSChoService {
+
     @Autowired
     private DSChoRepository dsChoRepository;
+
     @Override
     public List<DSCho> findAll() {
         return dsChoRepository.findAll();
@@ -18,16 +20,16 @@ public class DSChoService implements IDSChoService {
 
     @Override
     public DSCho findById(Long id) {
-        return null;
+        return dsChoRepository.findById(id).get();
     }
 
     @Override
     public void save(DSCho dsCho) {
-
+        dsChoRepository.save(dsCho);
     }
 
     @Override
     public void remove(Long id) {
-
+        dsChoRepository.deleteById(id);
     }
 }

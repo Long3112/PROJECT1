@@ -11,6 +11,6 @@ import lombok.Data;
 public class NXB {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String ten_nxb;
 }

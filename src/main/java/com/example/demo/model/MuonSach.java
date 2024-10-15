@@ -9,7 +9,7 @@ import lombok.Data;
 public class MuonSach {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @ManyToOne
     private Sach sach;

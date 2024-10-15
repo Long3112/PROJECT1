@@ -13,6 +13,6 @@ import java.util.Date;
 public class PhieuTra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private Date ngay_tra;
 }

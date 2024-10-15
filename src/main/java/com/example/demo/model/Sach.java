@@ -13,7 +13,7 @@ public class Sach {
     //TacGia, DanhMuc, NXB
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String ten_sach;
     private int so_trang;
     private String isbn;

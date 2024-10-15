@@ -21,16 +21,16 @@ public class DanhMucService implements IDanhMucService {
 
     @Override
     public DanhMuc findById(Long id) {
-        return null;
+        return danhMucRepository.findById(id).get();
     }
 
     @Override
     public void save(DanhMuc danhMuc) {
-
+        danhMucRepository.save(danhMuc);
     }
 
     @Override
     public void remove(Long id) {
-
+        danhMucRepository.deleteById(id);
     }
 }

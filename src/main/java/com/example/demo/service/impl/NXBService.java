@@ -10,8 +10,10 @@ import java.util.List;
 
 @Service
 public class NXBService implements INXBService {
+
     @Autowired
     private NXBRepository nxbRepository;
+
     @Override
     public List<NXB> findAll() {
         return nxbRepository.findAll();
@@ -19,16 +21,16 @@ public class NXBService implements INXBService {
 
     @Override
     public NXB findById(Long id) {
-        return null;
+        return nxbRepository.findById(id).get(); // Using get() directly
     }
 
     @Override
     public void save(NXB nxb) {
-
+        nxbRepository.save(nxb); // Save the NXB object
     }
 
     @Override
     public void remove(Long id) {
-
+        nxbRepository.deleteById(id); // Delete by ID
     }
 }

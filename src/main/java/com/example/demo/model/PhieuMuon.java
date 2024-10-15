@@ -13,7 +13,7 @@ import java.util.Date;
 public class PhieuMuon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private Date ngay_muon;
     private int thoi_han;
     private int so_sachmuon;

@@ -10,8 +10,10 @@ import java.util.List;
 
 @Service
 public class NhanVienService implements INhanVienService {
+
     @Autowired
     private NhanVienRepository nhanVienRepository;
+
     @Override
     public List<NhanVien> findAll() {
         return nhanVienRepository.findAll();
@@ -19,16 +21,16 @@ public class NhanVienService implements INhanVienService {
 
     @Override
     public NhanVien findById(Long id) {
-        return null;
+        return nhanVienRepository.findById(id).get(); // Using get() directly
     }
 
     @Override
     public void save(NhanVien nhanVien) {
-
+        nhanVienRepository.save(nhanVien); // Save the NhanVien object
     }
 
     @Override
     public void remove(Long id) {
-
+        nhanVienRepository.deleteById(id); // Delete by ID
     }
 }

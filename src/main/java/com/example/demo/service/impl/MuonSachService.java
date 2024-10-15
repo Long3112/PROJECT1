@@ -10,8 +10,10 @@ import java.util.List;
 
 @Service
 public class MuonSachService implements IMuonSachService {
+
     @Autowired
     private MuonSachRepository muonSachRepository;
+
     @Override
     public List<MuonSach> findAll() {
         return muonSachRepository.findAll();
@@ -19,16 +21,16 @@ public class MuonSachService implements IMuonSachService {
 
     @Override
     public MuonSach findById(Long id) {
-        return null;
+        return muonSachRepository.findById(id).get(); // Using get() directly
     }
 
     @Override
     public void save(MuonSach muonSach) {
-
+        muonSachRepository.save(muonSach);
     }
 
     @Override
     public void remove(Long id) {
-
+        muonSachRepository.deleteById(id);
     }
 }

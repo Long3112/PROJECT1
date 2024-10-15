@@ -10,8 +10,10 @@ import java.util.List;
 
 @Service
 public class PhieuTraService implements IPhieuTraService {
+
     @Autowired
     private PhieuTraRepository phieuTraRepository;
+
     @Override
     public List<PhieuTra> findAll() {
         return phieuTraRepository.findAll();
@@ -19,16 +21,17 @@ public class PhieuTraService implements IPhieuTraService {
 
     @Override
     public PhieuTra findById(Long id) {
-        return null;
+        return phieuTraRepository.findById(id).get(); // Using get() directly
     }
 
     @Override
     public void save(PhieuTra phieuTra) {
-
+        phieuTraRepository.save(phieuTra); // Save the PhieuTra object
     }
 
     @Override
     public void remove(Long id) {
-
+        phieuTraRepository.deleteById(id); // Delete by ID
     }
 }
+

@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class SinhVienService implements ISinhVienService {
+
     @Autowired
     private SinhVienRepository sinhVienRepository;
+
     @Override
     public List<SinhVien> findAll() {
         return sinhVienRepository.findAll();
@@ -18,16 +20,17 @@ public class SinhVienService implements ISinhVienService {
 
     @Override
     public SinhVien findById(Long id) {
-        return null;
+        return sinhVienRepository.findById(id).get(); // Using get() directly
     }
 
     @Override
     public void save(SinhVien sinhVien) {
-
+        sinhVienRepository.save(sinhVien); // Save the SinhVien object
     }
 
     @Override
     public void remove(Long id) {
-
+        sinhVienRepository.deleteById(id); // Delete by ID
     }
 }
+

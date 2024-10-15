@@ -10,8 +10,10 @@ import java.util.List;
 
 @Service
 public class SachService implements ISachService {
+
     @Autowired
     private SachRepository sachRepository;
+
     @Override
     public List<Sach> findAll() {
         return sachRepository.findAll();
@@ -19,16 +21,17 @@ public class SachService implements ISachService {
 
     @Override
     public Sach findById(Long id) {
-        return null;
+        return sachRepository.findById(id).get(); // Using get() directly
     }
 
     @Override
     public void save(Sach sach) {
-
+        sachRepository.save(sach); // Save the Sach object
     }
 
     @Override
     public void remove(Long id) {
-
+        sachRepository.deleteById(id); // Delete by ID
     }
 }
+
