@@ -17,6 +17,10 @@ public class Sach {
     private String ten_sach;
     private int so_trang;
     private String isbn;
+    private String mo_ta;
+    private String url_anh;
+    private String url_file;
+
     //TacGia
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL )
     @JoinTable(name = "sach_tacgia",

@@ -66,7 +66,7 @@ public class UserController {
             }
         }
         if (!userService.isCorrectConfirmPassword(user)) {
-            return ResponseEntity.badRequest().body("Confirmpassword không giống password");
+            return ResponseEntity.badRequest().body("Confirm password không giống password");
         }
         if (user.getRoles() != null) {
             Role role = roleService.findByName("ROLE_ADMIN");
