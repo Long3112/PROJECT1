@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Response.SachDTO;
 import com.example.demo.model.Sach;
 import com.example.demo.service.impl.SachService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @CrossOrigin("*")
@@ -18,9 +20,10 @@ public class SachController {
     private SachService sachService;
 
     @GetMapping("")
-    public ResponseEntity<List<Sach>> getAll() {
+    public List<SachDTO> getAll() {
         List<Sach> list = sachService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        return list.stream().map(this::convertToDTO).collect(Collectors.toList());
+
     }
     @PostMapping("")
     public ResponseEntity<String> add(@RequestBody Sach sach) {
@@ -49,4 +52,16 @@ public class SachController {
         Sach sach = sachService.findById(id);
         return new ResponseEntity<>(sach, HttpStatus.OK);
     }
+
+    private SachDTO convertToDTO(Sach sach) {
+        SachDTO dto = new SachDTO();
+        dto.setTen_sach(sach.getTen_sach());
+        dto.setUrl_anh(sach.getUrl_anh());
+        dto.setUrl_file(sach.getUrl_file());
+        dto.setId(sach.getId());
+        dto.setTacgia(sach.getTacgia().stream().map(tg -> tg.getTen_tacgia()).collect(Collectors.toList()));
+        dto.setDanhmuc(sach.getDanhmuc().stream().map(dm -> dm.getTen_danhmuc()).collect(Collectors.toList()));
+        return dto;
+    }
+
 }
