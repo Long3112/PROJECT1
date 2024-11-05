@@ -75,7 +75,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                                 .requestMatchers("/login", "/register", "/hello","/danhmucs/**","/dschos/**","/muonsachs/**",
                                         "/nhanviens/**","/nxb/**","/phieumons/**","/phieutras/**","/sachs/**",
-                                        "/sinhviens/**","/tacgias/**").permitAll()
+                                        "/sinhviens/**","/tacgias/**","/qrcodes/**").permitAll()
                                 .requestMatchers("/user/**").hasAnyAuthority("ROLE_USER")
                                 .requestMatchers("/admin/**").hasAnyAuthority("ROLE_ADMIN")
 //                        .requestMatchers(HttpMethod.DELETE, "/categories",
