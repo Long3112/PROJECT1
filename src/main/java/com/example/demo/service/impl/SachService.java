@@ -24,6 +24,10 @@ public class SachService implements ISachService {
         return sachRepository.findById(id).get(); // Using get() directly
     }
 
+    public List<Sach> findByTenSach(String tenSach) {
+        return sachRepository.findByTen_sachContaining(tenSach);
+    }
+
     @Override
     public void save(Sach sach) {
         sachRepository.save(sach); // Save the Sach object
