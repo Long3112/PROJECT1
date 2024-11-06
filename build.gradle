@@ -35,12 +35,13 @@ dependencies {
     implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
     implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.0.10.Final'
     implementation 'net.datafaker:datafaker:2.4.0'
-    implementation group: 'com.cloudinary', name: 'cloudinary-http44', version: '1.39.0'
+    implementation 'com.cloudinary:cloudinary-http5:2.0.0'
+    implementation 'com.cloudinary:cloudinary-taglib:2.0.0'
+    implementation 'io.github.cdimascio:dotenv-java:2.2.4'
     implementation 'com.google.zxing:core:3.4.1' // Thư viện Zxing cho QR code
     implementation 'com.google.zxing:javase:3.4.1' // Thư viện Zxing cho QR code (Java SE)
     implementation 'com.google.code.gson:gson:2.8.9' // Thư viện Gson để xử lý JSON
     runtimeOnly 'com.h2database:h2' // Cơ sở dữ liệu H2
-
 }
 
 tasks.named('test') {
