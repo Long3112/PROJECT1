@@ -14,12 +14,12 @@ public class Sach {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String ten_sach;
-    private int so_trang;
+    private String tieude;
+    private int sotrang;
     private String isbn;
-    private String mo_ta;
-    private String url_anh;
-    private String url_file;
+    private String mota;
+    private String urlanh;
+    private String urlfile;
 
     //TacGia
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL )

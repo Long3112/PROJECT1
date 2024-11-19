@@ -34,10 +34,10 @@ public class User implements Serializable {
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Set<Role> roles;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String phoneNumber;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String email;
 
 

@@ -24,9 +24,9 @@ public class SachService implements ISachService {
         return sachRepository.findById(id).get(); // Using get() directly
     }
 
-//    public List<Sach> findByTenSach(String tenSach) {
-//        return sachRepository.findByTen_sachContaining(tenSach);
-//    }
+    public List<Sach> findByTenSach(String tenSach) {
+        return sachRepository.findByTieude(tenSach);
+    }
 
     @Override
     public void save(Sach sach) {

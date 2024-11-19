@@ -18,18 +18,11 @@ public class SearchService implements ISearchService {
     @Autowired
     private SachService sachService;
 
+
     @Override
     public List<Sach> searchSach(String searchContent) {
         return sachService.findByTenSach(searchContent);
     }
 
-    @Override
-    public List<NXB> searchNXB(String searchContent) {
-        return List.of();
-    }
 
-    @Override
-    public List<DanhMuc> searchDanhMuc(String searchContent) {
-        return List.of();
-    }
 }

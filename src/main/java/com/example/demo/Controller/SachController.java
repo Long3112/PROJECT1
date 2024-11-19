@@ -40,7 +40,6 @@ public class SachController {
     public List<SachDTO> getAll() {
         List<Sach> list = sachService.findAll();
         return list.stream().map(this::convertToDTO).collect(Collectors.toList());
-
     }
     @PostMapping("")
     public ResponseEntity<String> add(@RequestBody Sach sach) {
@@ -72,9 +71,9 @@ public class SachController {
 
     private SachDTO convertToDTO(Sach sach) {
         SachDTO dto = new SachDTO();
-        dto.setTen_sach(sach.getTen_sach());
-        dto.setUrl_anh(sach.getUrl_anh());
-        dto.setUrl_file(sach.getUrl_file());
+        dto.setTen_sach(sach.getTieude());
+        dto.setUrl_anh(sach.getUrlanh());
+        dto.setUrl_file(sach.getUrlfile());
         dto.setId(sach.getId());
         dto.setTacgia(sach.getTacgia().stream().map(tg -> tg.getTen_tacgia()).collect(Collectors.toList()));
         dto.setDanhmuc(sach.getDanhmuc().stream().map(dm -> dm.getTen_danhmuc()).collect(Collectors.toList()));

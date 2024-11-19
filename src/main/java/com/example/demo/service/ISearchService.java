@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ISearchService  {
     public List<Sach> searchSach(String searchContent);
-    public List<NXB> searchNXB(String searchContent);
-    public List<DanhMuc> searchDanhMuc(String searchContent);
+//    public List<NXB> searchNXB(String searchContent);
+//    public List<DanhMuc> searchDanhMuc(String searchContent);
 }

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface SachRepository extends JpaRepository<Sach,Long> {
-    List<Sach> findByTen_sachContaining(String ndtimkiem);
+    List<Sach> findByTieude(String ndtimkiem);
 }
