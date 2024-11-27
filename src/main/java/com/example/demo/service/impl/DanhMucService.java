@@ -3,8 +3,11 @@ package com.example.demo.service.impl;
 import com.example.demo.model.DanhMuc;
 import com.example.demo.repository.DanhMucRepository;
 import com.example.demo.service.IDanhMucService;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,6 +16,7 @@ public class DanhMucService implements IDanhMucService {
 
     @Autowired
     private DanhMucRepository danhMucRepository;
+
 
     @Override
     public List<DanhMuc> findAll() {

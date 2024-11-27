@@ -1,21 +1,26 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Set;
 
 @Data
 @Entity
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@Table(name = "sach")
 public class Sach {
     //TacGia, DanhMuc, NXB
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String tieude;
-    private int sotrang;
     private String isbn;
     private String mota;
     private String urlanh;

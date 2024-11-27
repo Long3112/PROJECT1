@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "qrcode")
 public class QRCodeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

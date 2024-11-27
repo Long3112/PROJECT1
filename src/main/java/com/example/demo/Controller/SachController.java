@@ -76,7 +76,7 @@ public class SachController {
         dto.setUrl_file(sach.getUrlfile());
         dto.setId(sach.getId());
         dto.setTacgia(sach.getTacgia().stream().map(tg -> tg.getTen_tacgia()).collect(Collectors.toList()));
-        dto.setDanhmuc(sach.getDanhmuc().stream().map(dm -> dm.getTen_danhmuc()).collect(Collectors.toList()));
+        dto.setDanhmuc(sach.getDanhmuc().stream().map(dm -> dm.getDanhmucten()).collect(Collectors.toList()));
         return dto;
     }
         // Thêm phương thức để tạo QR Code
