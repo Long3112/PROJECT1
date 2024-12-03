@@ -8,9 +8,15 @@ import lombok.Data;
 @Table(name = "muonsach")
 public class MuonSach {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private Sach sach;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "muonsach_sach",
+            joinColumns = @JoinColumn(name = "muonsach_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "sach_id", referencedColumnName = "id")
+    )
+    private List<Sach> sach;
+
+
 }
